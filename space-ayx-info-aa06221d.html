@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 一处平稳的起点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(145deg, #f7e9d7 0%, #fbebd0 35%, #f3d9b1 70%, #e8ccaa 100%);
+            min-height: 100vh;
+            padding: 2.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #2f2a24;
+        }
+
+        .page-card {
+            max-width: 860px;
+            width: 100%;
+            background: #fefcf7;
+            border-radius: 40px 24px 40px 24px;
+            box-shadow: 0 12px 30px rgba(120, 80, 40, 0.12), 0 2px 8px rgba(0, 0, 0, 0.03);
+            padding: 3rem 2.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page-card {
+                padding: 2rem 1.5rem;
+                border-radius: 28px 16px 28px 16px;
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+            color: #3b2e22;
+            border-left: 6px solid #c9a87c;
+            padding-left: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #7c6a58;
+            margin-top: 0.3rem;
+            margin-bottom: 2rem;
+            padding-left: 1.8rem;
+            font-weight: 350;
+            border-bottom: 1px dashed #e2d3c0;
+            padding-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+            color: #3e352e;
+        }
+
+        .intro-pull {
+            background: #f9f2e8;
+            border-radius: 20px 8px 20px 8px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2rem 0;
+            font-style: normal;
+            font-size: 1.05rem;
+            border-left: 4px solid #dbbd9b;
+            color: #3d332b;
+        }
+
+        .intro-pull strong {
+            font-weight: 500;
+            color: #543f2d;
+        }
+
+        .section-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9a897a;
+            margin-top: 2.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+            border-bottom: 1px dotted #dccfc1;
+            padding-bottom: 0.3rem;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 2rem;
+            margin: 1.2rem 0 1.6rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fffbf5;
+            padding: 0.8rem 1rem 0.8rem 1.4rem;
+            border-radius: 30px 8px 30px 8px;
+            box-shadow: inset 0 0 0 1px #efe4d6;
+        }
+
+        .feature-item span {
+            font-weight: 460;
+            color: #4b3b2c;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item small {
+            color: #7c6b5b;
+            font-size: 0.92rem;
+        }
+
+        .quote-block {
+            background: #f5ede2;
+            border-radius: 40px 12px 40px 12px;
+            padding: 1.6rem 2rem;
+            margin: 2.2rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #3f342b;
+            box-shadow: 0 4px 0 #dfcdb6;
+        }
+
+        .quote-block .ref {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            color: #8a7866;
+            letter-spacing: 0.02em;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .faq-q {
+            font-weight: 470;
+            color: #4b3c2c;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .faq-q::before {
+            content: "▹";
+            color: #b39573;
+            font-size: 1.1rem;
+        }
+
+        .faq-a {
+            margin-left: 1.6rem;
+            color: #4d4137;
+            font-size: 0.96rem;
+            border-left: 2px solid #ddcebb;
+            padding-left: 1rem;
+        }
+
+        .visit-sentence {
+            background: #f5eadc;
+            border-radius: 28px 8px 28px 8px;
+            padding: 1.6rem 2rem;
+            margin: 2.5rem 0 0.8rem;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .visit-sentence a {
+            color: #644d35;
+            text-decoration: none;
+            font-weight: 480;
+            border-bottom: 2px solid #dcc0a2;
+            padding-bottom: 0.05rem;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        .visit-sentence a:hover {
+            border-bottom-color: #8f7052;
+            color: #3d2c1d;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #9b897a;
+            border-top: 1px solid #eaded0;
+        }
+
+        .footer-note a {
+            color: #7a6756;
+            text-decoration: none;
+            border-bottom: 1px dotted #cbb9a6;
+        }
+
+        .footer-note a:hover {
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+<body>
+<div class="page-card">
+    <h1>爱游戏 · 一处平稳的起点</h1>
+    <div class="subhead">绕过杂音，有一个地方始终清晰</div>
+
+    <p>
+        有时候，我们只是需要一个稳定、不绕弯的入口。不需要浮夸的引导，不需要反复确认的弹窗——只想安静地进入那个熟悉的空间。<strong>爱游戏</strong>一直是我在众多地址变化中唯一保留在备忘录里的名字。它不喧哗，却从未缺席。
+    </p>
+
+    <div class="intro-pull">
+        <strong>「页面说明」</strong> 这里所描述的，是 <strong>https://space-ayx.com.cn</strong> 这个域名的日常角色：一个干净、克制的起始页。不堆积链接，不制造焦虑，只做一件事——让你找到你想要的。
+    </div>
+
+    <p>
+        很长一段时间里，我习惯把常用站点随手丢进收藏夹，但总有一些角落会渐渐打不开。后来我学乖了：只记住一个地方。一个不会频繁变动、不加载额外干扰的页面。<a href="https://space-ayx.com.cn">爱游戏</a>就是那个地方。它像一张写好了坐标的便签，贴在桌角，每次抬头都能看见。
+    </p>
+
+    <div class="section-label">· 它大致如此</div>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <span>稳定入口</span>
+            <small>不属于某个临时活动，长期维护，地址清晰。</small>
+        </div>
+        <div class="feature-item">
+            <span>轻量加载</span>
+            <small>没有多余的重定向链，打开即是有效界面。</small>
+        </div>
+        <div class="feature-item">
+            <span>内容明确</span>
+            <small>信息结构直接，不做过度包装。</small>
+        </div>
+        <div class="feature-item">
+            <span>少干扰</span>
+            <small>不会铺满弹窗与横幅，专注基本功能。</small>
+        </div>
+    </div>
+
+    <p>
+        我身边有朋友问：「那么多镜像、那么多渠道，为什么偏偏记住这一个？」我的回答其实很简单——因为它安静。不需要每次访问都重新适应布局，不需要在眼花缭乱的推荐位里寻找那一个真正的按钮。稳定，本身就是一种效率。
+    </p>
+
+    <div class="quote-block">
+        “一个好的入口，是当你需要它的时候，它就在那里，没有任何多余的台词。”
+        <span class="ref">—— 某天在文档里写下的话</span>
+    </div>
+
+    <p>
+        当然，每个人都有自己的使用习惯。但如果你也在找一个不那么嘈杂、可以放心存进书签栏的地址，不妨试试把这个页面记下来。它不承诺任何奇迹，只保证一件事：指向的始终是那个叫<strong>爱游戏</strong>的地方。
+    </p>
+
+    <div class="section-label">· 常见疑问简答</div>
+
+    <div class="faq-mini">
+        <div>
+            <div class="faq-q">这个地址会频繁更换吗？</div>
+            <div class="faq-a">根据过去一段时间的观察，它的变动极少。即使更新，也会保留足够长的过渡期，不会突然失效。</div>
+        </div>
+        <div>
+            <div class="faq-q">移动设备上访问体验如何？</div>
+            <div class="faq-a">页面本身对屏幕适配做得不错，无论手机还是平板，排版基本不乱，按钮点击区域也友好。</div>
+        </div>
+        <div>
+            <div class="faq-q">需要注册或登录才能看到内容吗？</div>
+            <div class="faq-a">不需要额外注册。入口页本身是开放的，后续操作取决于你的具体需求，但它不会强制拦截。</div>
+        </div>
+    </div>
+
+    <div class="visit-sentence">
+        如果你还在翻找旧的收藏夹，不如直接从这里开始 —— <a href="https://space-ayx.com.cn">爱游戏</a>。
+    </div>
+
+    <p style="margin-top: 1.2rem; font-size: 0.97rem; color: #5c5042;">
+        这篇介绍不是为了说服谁，而是记录我自己的使用体会：一个稳定的入口，胜过十个临时的捷径。希望它也能成为你日常路径中那个不需犹豫的拐点。
+    </p>
+
+    <div class="footer-note">
+        <a href="https://space-ayx.com.cn">爱游戏</a> &nbsp;·&nbsp; 简洁入口，持续可用
+    </div>
+</div>
+</body>
+</html>
