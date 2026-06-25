@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小艾电竞 · 信息卡片简介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f9fc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1f2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉区 ———— 极简留白，卡片氛围 */
+    .hero {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .hero-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      background: #eef2f7;
+      border-radius: 50%;
+      font-size: 2rem;
+      color: #2c4b7a;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1a2e;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #3d506c;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* 标题层级 */
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1f2a3a;
+      margin-top: 2.2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.4rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #2a3f5c;
+      margin-bottom: 0.4rem;
+    }
+
+    /* 卡片网格 ———— 信息卡片式 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.2rem 0 0.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.25rem 1rem 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.03);
+      transition: transform 0.1s ease, box-shadow 0.1s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      line-height: 1;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #475a73;
+      margin-top: 0.25rem;
+    }
+
+    /* 适合人群卡片 用更宽的样式 */
+    .audience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .audience-tag {
+      background: #eef2f7;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #1f2a3a;
+    }
+
+    /* 自然链接段落 */
+    .link-paragraph {
+      background: #ffffff;
+      padding: 1.5rem 1.5rem;
+      border-radius: 18px;
+      margin: 1.8rem 0 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .link-paragraph p {
+      font-size: 0.98rem;
+      color: #2c3b55;
+    }
+
+    a {
+      color: #1f5199;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #bacee6;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #0a2b5c;
+      border-bottom-color: #1f5199;
+    }
+
+    /* FAQ 摘要 */
+    .faq-item {
+      margin-top: 0.8rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #e9edf3;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-a {
+      color: #3d506c;
+      font-size: 0.9rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 500px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .link-paragraph {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    /* 最后的留白与 footer */
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #6f7d93;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 主视觉 -->
+    <div class="hero">
+      <div class="hero-icon">🎯</div>
+      <h1>小艾电竞</h1>
+      <p>一个帮你快速理解赛事、工具与社区的信息站，不绕圈子，直接给你核心。</p>
+    </div>
+
+    <!-- 用途卡片（信息卡片式） -->
+    <h2>🔍 你会在这里看到什么</h2>
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-icon">📊</span>
+        <h3>赛事速览</h3>
+        <p>比赛数据、赛程信息，以及队伍状态，不用翻好几页就能抓住重点。</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🧰</span>
+        <h3>实用资源</h3>
+        <p>工具推荐、配置参考、社区指南，把散落的信息整理成顺手可用的卡片。</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">💬</span>
+        <h3>社区动态</h3>
+        <p>玩家讨论、热点话题、活动提醒，你关心的事这里会有人聊。</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📌</span>
+        <h3>新手指引</h3>
+        <p>电竞术语、观赛入门、平台差异，让刚接触的人也能自然融入。</p>
+      </div>
+    </div>
+
+    <!-- 适合人群（用标签形式） -->
+    <h2>👥 适合谁用</h2>
+    <div class="audience-list">
+      <span class="audience-tag">想快速了解赛况的观众</span>
+      <span class="audience-tag">偶尔打打排位的玩家</span>
+      <span class="audience-tag">战队粉丝</span>
+      <span class="audience-tag">刚接触电竞的朋友</span>
+      <span class="audience-tag">想找工具和攻略的人</span>
+    </div>
+    <p style="font-size:0.92rem; color:#3d506c; margin-top:0.6rem;">不论你是资深关注者，还是偶尔看看比赛、想搞清楚某个队伍或版本变化，<a href="https://index-xiaoai.com">小艾电竞</a> 提供的信息卡片能让你省下到处对比的时间。</p>
+
+    <!-- 自然链接段落 (融入句子) -->
+    <div class="link-paragraph">
+      <p>
+        如果你已经在关注某个赛事或者想先了解最近的热门战队，可以直接去翻翻 <a href="https://index-xiaoai.com">小艾电竞</a> 上的内容。这里没有折叠很深的信息层级，也不用注册才能看——打开就是卡片式的摘要，从赛程到社区讨论都摆在明面上。
+      </p>
+      <p style="margin-top:0.8rem;">
+        另外，你可能会在某个周末想看看有没有比赛直播，或者想找一份新版本装备变动汇总，大多数时候 <a href="https://index-xiaoai.com">小艾电竞</a> 都会有一个卡片专门整理这类信息。它不是一个社区论坛，更像一个干净的信息台。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要 (不是完整FAQ，只是片段) -->
+    <h2>❓ 常见疑问摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">这里的内容是自动更新吗？</div>
+      <div class="faq-a">部分赛程和资源链接会定期同步，社区动态则来自玩家分享，内容会保持新鲜但不承诺实时。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">我需要注册或者登录才能用吗？</div>
+      <div class="faq-a">浏览所有卡片信息都不需要注册，直接打开就能看。部分社区互动可能会用到第三方帐号。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">我看到某个卡片信息有误，能反馈吗？</div>
+      <div class="faq-a">当然可以，目前页面底部有建议入口，或者通过社群告诉维护者。信息卡片会尽量保持准确。</div>
+    </div>
+
+    <!-- 收尾提示，极简 -->
+    <div class="footer-note">
+      小艾电竞 · 信息卡片站 &nbsp;|&nbsp; 网页版
+    </div>
+  </div>
+</body>
+</html>
